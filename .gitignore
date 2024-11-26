@@ -1,6 +1,6 @@
 # IDEs
-.vscode/
-.idea/
+.vscode
+.idea
 
 # Intermediate Coverage file
 .coverage
@@ -12,3 +12,6 @@
 *.pyc
 *.egg-info
 .pytest_cache
+
+# Python Environments
+.venv
