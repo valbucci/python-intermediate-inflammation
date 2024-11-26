@@ -14,4 +14,4 @@
 .pytest_cache
 
 # Python Environments
-.venv
+*venv
