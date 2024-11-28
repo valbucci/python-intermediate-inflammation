@@ -1,9 +1,27 @@
 """Tests for statistics functions within the Model layer."""
 
+import pytest
 import numpy as np
 import numpy.testing as npt
 
-from inflammation.models import daily_mean
+from inflammation.models import daily_mean, daily_max, daily_min
+
+
+def test_daily_max():
+    """Test that max function works for an array of positive integers."""
+
+    test_input = np.array([[4, 2, 5],
+                           [1, 6, 2],
+                           [5, 1, 9]])
+    test_result = np.array([5, 6, 9])
+    npt.assert_array_equal(daily_max(test_input), test_result)
+
+
+def test_daily_min():
+    """Test that min function throws an error when strings are passed."""
+
+    with pytest.raises(TypeError):
+        daily_min(['Good', 'news'], ["Everyone", "!"])
 
 
 def test_daily_mean_zeros():
